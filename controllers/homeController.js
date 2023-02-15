@@ -4,7 +4,8 @@ const Comment = require("../models/Comment");
 const User = require("../models/User");
 
 const index = async (req, res) => {
-  const articles = await Article.findAll();
+  const articles = await Article.findAll({ include: User });
+
   let articleDate = [];
   for (article of articles) {
     articleDate.push({
@@ -23,7 +24,8 @@ const index = async (req, res) => {
 };
 
 const articles = async (req, res) => {
-  const article = await Article.findByPk(req.params.id);
+  const { id } = req.params;
+  const article = await Article.findByPk(id, { include: User });
 
   const parsedArticleDates = {
     parsedCreatedAt: format(article.createdAt, "MMMM do yyyy, h:mm:ss a"),
