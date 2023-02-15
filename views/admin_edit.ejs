@@ -22,7 +22,7 @@
                   name="title"
                   type="text"
                   class="form-control"
-                  value="<%=article.dataValues.title%>"
+                  value="<%=article.title%>"
                   required
                 />
               </div>
@@ -33,7 +33,7 @@
                   type="text"
                   class="form-control"
                   required
-                ><%=article.dataValues.content%></textarea>
+                ><%=article.content%></textarea>
               </div>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Image</label>
@@ -42,7 +42,7 @@
                   name="image"
                   type="file"
                   class="form-control"
-                  value="<%= article.dataValues.image %>"
+                  value="<%= article.image %>"
                   
                 />
               </div>

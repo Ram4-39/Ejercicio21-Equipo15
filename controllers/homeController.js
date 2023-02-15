@@ -29,6 +29,7 @@ const articles = async (req, res) => {
     parsedCreatedAt: format(article.createdAt, "MMMM do yyyy, h:mm:ss a"),
     parsedUpdatedAt: format(article.updatedAt, "MMMM do yyyy, h:mm:ss a"),
   };
+
   const comments = await Comment.findAll({
     where: { article_id: req.params.id },
   });

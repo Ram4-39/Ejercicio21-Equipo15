@@ -22,7 +22,6 @@ const index = async (req, res) => {
   }
 
   return res.render("admin", {
-    articles,
     articlesUsers,
     articleDate,
     articleId,
