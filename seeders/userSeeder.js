@@ -8,6 +8,7 @@ module.exports = async () => {
   for (let i = 0; i < 5; i++) {
     users.push({
       username: faker.internet.userName(),
+      password: "1234",
     });
   }
 

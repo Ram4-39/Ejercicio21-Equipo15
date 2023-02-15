@@ -12,7 +12,7 @@ app.set("view engine", "ejs");
 
 routes(app);
 
-dbInitialSetup();
+//dbInitialSetup();
 
 app.listen(port, () => {
   console.log(`Listening... http://localhost:${port}`);
