@@ -10,10 +10,10 @@
   <body>
     <%- include("partials/navbar") %>
     <div class="d-flex justify-content-center align-items-center" 
-    <% if(article.dataValues.image.includes("http")) {%>
+    <% if(article.image.includes("http")) {%>
       style="
       background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('<%= article.dataValues.image %>');
+      url('<%= article.image %>');
       background-repeat: no-repeat;
       background-size: cover;
       height: 50vh;
@@ -21,7 +21,7 @@
       <% }  else {%>
         style="
       background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('/img/<%= article.dataValues.image %>');
+      url('/img/<%= article.image %>');
       background-repeat: no-repeat;
       background-size: cover;
       height: 50vh;
@@ -39,13 +39,13 @@
       <div class="col-lg-8 mx-auto">
           <p style="font-family: 'Lora';" class="pt-3">
             <pre style="white-space: pre-wrap;
-            font-family: Helvetica Neue;" class="fs-6"><%= article.dataValues.content %></pre>
+            font-family: Helvetica Neue;" class="fs-6"><%= article.content %></pre>
           </p> 
           <p class="text-secondary mt-4" style="font-size: 0.85rem;" >Last updated: <%= parsedArticleDates.parsedUpdatedAt %></p>
         <div class="comment mb-1 mt-5 d-flex ">
           <h3>Add your comment</h3>
         </div>
-        <form action="/article/<%= article.dataValues.id %>/create-comment" method="post" id="commentForm" class="form-group mt-2">     
+        <form  action="/article/<%= article.id %>/create-comment" method="post" id="commentForm" class="form-group mt-2">     
           <div>
             <input type="text" id="name" name="name" placeholder="Name" class="form-control mb-3" >
             <textarea id="comment" name="comment" placeholder="Write your comment..." class="form-control mb-3" style="height: 150px"></textarea>

@@ -1,9 +1,10 @@
 const { Article, User } = require("../models");
 const formidable = require("formidable");
-const { format } = require("date-fns");
 
 const index = async (req, res) => {
   const articles = await Article.findAll();
+  const users = await User.findAll();
+
   const articleId = req.params.id;
   const articlesUsers = await Article.findAll({ include: User });
 
