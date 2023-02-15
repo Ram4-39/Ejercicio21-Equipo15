@@ -10,7 +10,7 @@ const index = async (req, res) => {
   const articlesUsers = await Article.findAll({ include: User });
 
   let articleDate = [];
-  for (article of articles) {
+  for (const article of articles) {
     articleDate.push({
       parsedCreatedAt: format(
         article.dataValues.createdAt,
@@ -69,7 +69,11 @@ const edit = async (req, res) => {
   const { id } = req.params;
   const article = await Article.findByPk(id, { include: User });
 
-  return res.render("admin_edit", { id, article });
+  if (req.user.id === article.user.id) {
+    return res.render("admin_edit", { id, article });
+  } else {
+    res.redirect("/login");
+  }
 };
 
 const update = async (req, res) => {

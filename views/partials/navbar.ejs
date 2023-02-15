@@ -2,7 +2,13 @@
     <nav class="navbar bg-black fixed-top">
       <div class="container">
         <a class="navbar-brand text-light" href="/">Hack the Blog</a>
-        <a class="btn btn-secondary d-block ms-auto" type="submit" href="/login">Login</a>  
+        <% if (user) {%>
+        <span class="ms-auto" style="color:white"><%= user.username %></span>
+        <a class="btn btn-secondary d-block ms-2" type="submit" href="/logout">Logout</a>
+        <% }else { %>
+        <span class="ms-auto" style="color:white">Not logged</span>
+        <a class="btn btn-secondary d-block ms-2" type="submit" href="/login">Login</a> 
+         <% } %>
         <a class="btn btn-primary ms-2" type="submit" href="/admin">Admin</a>
         </form>
       </div>

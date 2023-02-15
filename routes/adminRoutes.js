@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const articleController = require("../controllers/articleController");
+const isAuthenticated = require("../middleware/isAuthenticated");
 
-router.get("/admin", articleController.index);
+router.get("/admin", isAuthenticated, articleController.index);
 
 router.get("/admin/create", articleController.create);
 

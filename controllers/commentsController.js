@@ -3,7 +3,7 @@ const Comment = require("../models/Comment");
 
 const store = async (req, res) => {
   const articleId = req.params.id;
-  const createdCommentName = req.body.name;
+  const createdCommentName = req.user.username;
   const createdCommentContent = req.body.comment;
 
   await Comment.create({
