@@ -7,7 +7,7 @@ const index = async (req, res) => {
   const articles = await Article.findAll({ include: User });
 
   let articleDate = [];
-  for (article of articles) {
+  for (const article of articles) {
     articleDate.push({
       parsedCreatedAt: format(
         article.dataValues.createdAt,
