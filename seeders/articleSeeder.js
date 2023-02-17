@@ -1,6 +1,5 @@
 const { faker } = require("@faker-js/faker");
 const { Article } = require("../models");
-const { User } = require("../models");
 
 faker.locale = "en";
 

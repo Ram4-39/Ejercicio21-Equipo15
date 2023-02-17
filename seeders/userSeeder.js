@@ -9,7 +9,8 @@ module.exports = async () => {
   for (let i = 0; i < 5; i++) {
     users.push({
       username: faker.internet.userName(),
-      password: await bcrypt.hash("1234", 10),
+      password: await bcrypt.hash("1234", 8),
+      role_id: faker.datatype.number({ min: 1, max: 4 }),
     });
   }
 
