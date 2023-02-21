@@ -46,7 +46,7 @@ const articles = async (req, res) => {
 
 const api = async (req, res) => {
   const articles = await Article.findAll();
-  res.json({ articles });
+  return res.json({ articles });
 };
 
 module.exports = { index, articles, api };

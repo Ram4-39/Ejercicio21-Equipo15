@@ -46,16 +46,18 @@
                 
                 />
               </div>
+              <% console.log(user) %>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Author</label>
                 <input
                   name="author"
-                  type="number"
+                  type="text"
                   class="form-control"
-                  placeholder="Author..."
+                  value= "<%= user.username %>"
                   required
                 />
               </div>
+              
               <button
                 type="submit"
                 name="submitButton"

@@ -7,7 +7,7 @@ const makeUserAvailableInViews = require("../middleware/makeUserAvailableInViews
 module.exports = (app) => {
   app.use(makeUserAvailableInViews);
   app.use("/", adminRoutes);
-  app.use("/", apiRoutes);
+  app.use("/api", apiRoutes);
   app.use("/", homeRoutes);
   app.use("/", userRoutes);
 };

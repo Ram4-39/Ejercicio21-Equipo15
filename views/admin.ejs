@@ -30,6 +30,7 @@
             </thead>
             <tbody>
               <% for(article of articlesUsers) {%>
+                <% if (user.username === article.user.username){ %>
                 <tr>
                     <td><%= article.id %></td>
                     <td><%= article.title %></td>
@@ -49,6 +50,7 @@
                         <a class="btn btn-danger px-2" href="admin/delete/<%=article.id%>">Remove</a>
                     </td>
                 </tr>
+                <% } %>
               <% } %>
             </tbody>
           </table>

@@ -31,7 +31,8 @@ const index = async (req, res) => {
 };
 
 const create = (req, res) => {
-  return res.render("admin_create");
+  const user = req.user;
+  return res.render("admin_create", user);
 };
 
 function getImage(fields, files) {
